@@ -1,0 +1,207 @@
+1.factorial:
+#include <stdio.h>
+int fact(int val)
+{
+    if(val<=1)
+    return 1;
+    else
+    return val*fact(val-1);
+}
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    printf("%d",fact(num));
+    return 0;
+}
+
+2.fibonacci:
+#include <stdio.h>
+int main()
+{
+ int  limit,t1=0,t2=1,t3;
+ scanf("%d",&limit);
+ printf("%d%d",t1,t2);
+for(int i=0;i<limit-2;i++)
+{
+  t3=t1+t2;
+  printf("%d",t3);
+  t1=t2;
+  t3=t2;
+}}
+
+3.nth term in Fibonacci series:
+#include <stdio.h>
+int main()
+{  int limit,t1=0,t2=1,t3,count=0;
+    scanf("%d",&limit);
+    for(int i=0;i<limit-2;i++)
+{
+    t3=t1+t2;
+    t1=t2;
+    t3=t2;
+}
+
+printf("%d",t3);
+}
+
+4.Sum of Fibonacci:
+#include <stdio.h>
+int main()
+{  int limit,t1=0,t2=1,t3,count=0;
+    scanf("%d",&limit);
+    count=t1+t2;
+    for(int i=0;i<limit-2;i++)
+{
+    t3=t1+t2;
+    count+=t3;
+    t1=t2;
+    t3=t2;
+}
+printf("%d",count);
+}
+
+5.Armstrong:
+#include <stdio.h>
+#include <math.h>
+ 
+int main()
+{
+    int num, count=0,result=0,digit,num2,num1,val;
+    scanf("%d", &num);
+    num1= num;
+    num2=num;
+    
+    while(num!=0)  
+    {
+        num = num/10;                                   
+        count+=1; 
+        
+    }
+    val=count;
+    while (num1!=0)	  
+    {
+        digit=num1%10;
+        result+=pow (digit+val);
+        num1=num/10;
+    }
+    if(num2==result)
+    printf (" it is Armstrong number");
+    else
+    printf ("Not an Armstrong number");
+}
+
+6.Palindrome:
+#include <stdio.h>
+int Palindrome(int n,int rev)
+{
+    if (n==0)
+        return rev;
+    rev = rev * 10 +n %10;
+    Palindrome(n/10,rev);
+}
+int main()
+{
+    int num,res,rev=0;
+    scanf("%d",&num);
+    res = Palindrome(num,rev); 
+    if(res==num)
+    printf(" It is a Palindrome number");
+    else
+    printf("Not a palindrome number");
+}
+
+7.Prime number:
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int num,num1,res=0;
+    scanf("%d", &num);
+     if (num <= 1)
+        printf("Not a prime number");
+    else{
+         for (num1= 2; num1<=sqrt(num);num1++)
+    {
+        if ((num %num1)==0)
+        {
+            res= 1;
+            break;
+        }
+    }
+    }
+    if(res== 0)
+    printf("It is a Prime number");
+    else
+    printf("Not a prime number");
+}
+
+8.print m pattern:
+#include<stdio.h>
+int main() {
+    int n;
+    scanf("%d",&num);
+ for (int i =1; i<=num;i++) {
+        for (int j =1;j<=num; j++) {
+            if (j==1 || j==num|| (i==j&&i<=num/2+1) || (i+j-1==num&&i<=num/2+1)) 
+            {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+            printf(" "); 
+        }
+        printf("\n");
+    }
+  return 0;
+}
+
+9.Print the pattern
+  12345
+   2345
+    345
+     45
+#include<stdio.h>
+int main()
+{
+    int i,j,num;
+    scanf("%d",&num);
+    for(int i=1;i<=num;i++,printf("\n")) 
+    {
+        for(int j=1;j<=num;j++)
+        if(i<=j)
+        printf("%d ",j);
+        else
+        printf("  ");
+    }
+    return 0;
+}
+
+10. print Sand clock pattern:
+#include<stdio.h>
+int main() {
+    int i,j,n;
+    scanf("%d", &n);
+    for (i = 1;i<=n;i++,printf("\n"))
+    {
+        for (j=1;j<i;j++) 
+            printf("  ");
+        for (j=i;j<=n;j++)
+            printf("* ");
+        for (j=i;j<n;j++) 
+            printf("* ");
+    }
+    for (i=2;i<=n;i++,printf("\n")) 
+    {
+        for (j=n; j>i;j--)
+            printf("  ");
+        for (j=1;j<=i;j++) 
+            printf("* ");
+        for (j=1;j <i;j++) 
+            printf("* ");
+    }
+    return 0;
+}
+
+
