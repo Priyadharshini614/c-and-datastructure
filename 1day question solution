@@ -82,7 +82,7 @@ int main()
     while (num1!=0)	  
     {
         digit=num1%10;
-        result+=pow (digit+val);
+        result+=pow (digit,val);
         num1=num/10;
     }
     if(num2==result)
