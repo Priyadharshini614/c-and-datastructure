@@ -140,7 +140,7 @@ int main()
 8.print m pattern:
 #include<stdio.h>
 int main() {
-    int n;
+    int num;
     scanf("%d",&num);
  for (int i =1; i<=num;i++) {
         for (int j =1;j<=num; j++) {
