@@ -1,0 +1,73 @@
+1.triagnle or not:
+#include<stdio.h>
+int main(){
+ int a,b,c;
+ scanf("%d %d %d",&a,&b,&c);
+ if (a+b>c && b+c>a &&c+a>b){
+     printf("It is a triangle");
+ }
+ else{
+     printf("no");
+     }
+ }
+
+2.
+3.greatest element:
+#include <stdio.h>
+
+int main() {
+    int a,b,c,d;
+scanf("%d %d %d %d",&a,&b,&c,&d);
+if ((a>b)&&(a>c)&&(a>d))
+{printf("%d",a);}
+else if ((b>a)&&(b>c)&&(b>d))
+{printf( "%d",b);}
+else if ((c>a)&&(c>b)&&(c>d))
+{printf("%d",c);}
+else {printf("largest is %d",d);}
+    return 0;
+}
+
+
+3.sort the array element:
+
+#include <stdio.h>
+void main (){
+   int num[20];
+   int i, j, a, n;
+   scanf("%d", &n);
+   for (i =0;i<n;++i)
+      scanf("%d", &num[i]);
+   for (i = 0; i < n; ++i){
+      for (j = i+1;j<n;++j){
+         if (num[i] > num[j]){
+            a = num[i];
+            num[i] = num[j];
+            num[j] = a;
+         }
+      }
+   }
+   for (i = 0; i < n; ++i){
+      printf("%d", num[i]);
+   }
+}
+
+4.#include <stdio.h>
+
+int main()
+{
+    int val;
+    scanf("%d",&val);
+    if((val>='a'&&val<='z')||(val>='A'&&val<='Z')) 
+    {
+    printf("alphate");
+    }
+     if(val>='0'&&val<='9')
+     {
+    printf("digit");
+    }
+    else
+    printf("special character");
+    
+ return 0;
+}
