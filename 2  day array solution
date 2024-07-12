@@ -202,6 +202,149 @@ for(int index=0;index<size;index++)
    printf("%d ",arr[index]);
 }
 
-11.
+11.swap the pair of element:
+#include<stdio.h>
+void main()
+{
+int size,count,index;
+scanf("%d ",&size);
+int arr[size];
+for(int index=0;index<size;index++)
+    scanf("%d",&arr[index]);
+for(int start=0;start<size-1;start+=2)
+    {
+   int temp=arr[start];
+    arr[start]=arr[start+1];
+    arr[start+1]=temp;
+    }
+    for(int index=0;index<size;index++)
+    printf("%d ",arr[index]);
+}
+
+12.rotate element:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int n,rot,i,temp,j;
+    scanf("%d",&n);
+    int a[n];
+    scanf("%d",&rot);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+   
+    for(j=0;j<rot;j++)
+    {
+         temp=a[n-1];
+        for(i=n-1;i>0;i--)
+        {
+            a[i]=a[i-1];
+        }
+        a[0]=temp;
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    return 0;
+}
+
+
+13.sorted array:
+#include <stdio.h>
+
+int Sorted(int arr[],int num) {
+    int count=0;
+    for (int i=0;i<num;i++) {
+        if (arr[i]>arr[(i+1)%num]) {
+            count++;
+        }
+    }
+    return count <= 1;
+}
+
+int main() {
+    int num;
+    scanf("%d", &num);
+    int arr[num];
+    for (int i=0;i<num;i++) 
+    {
+        scanf("%d", &arr[i]);
+ if(Sorted(arr, num)) 
+    {
+    printf("True");
+    }
+    else
+    printf("False");
+
+}
+    return 0;
+}
+
+14.remove duplicate element:
+#include<stdio.h>
+void main()
+{
+int arr[100],index;
+int size;
+scanf("%d",&size);
+
+for(int index=0;index<size;index++)
+    scanf("%d",&arr[index]);
+
+
+    for(int start=0;start<size-1;start++)
+{
+   for(int j=start+1;j<size;j++)
+{
+
+if (arr[start]==arr[j])
+{
+for(int j1=j;j1<size;j1++)
+arr[j1]=arr[j+1];
+size--;
+j--;
+}
+}
+}
+   for(int index=0;index<size;index++)
+   printf("%d ",arr[index]);
+}
+
+
+15.find smallest element:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int size=5,index;
+    int arr[size];
+    for(index=0;index<size;index++)
+        scanf("%d",&arr[index]);
+     for(index=0;index<size;index++)
+     {  
+        for(int j=index+1;j<size;j++) 
+          if(arr[j]<arr[index])  
+            {  
+                int temp = arr[j];  
+                arr[j] = arr[index];  
+                arr[index] = temp;
+          }
+     }
+         
+    for(index=0;index<2;index++)
+    printf("%d ",arr[index]);   
+    return 0;
+}
+
+
+
 
 
