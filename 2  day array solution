@@ -37,7 +37,6 @@ int main()
 }
 
 3.count the lesser than key element:
-*******************************************************************************/
 #include <stdio.h>
 
 int main()
