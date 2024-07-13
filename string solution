@@ -194,3 +194,5 @@ int main()
     printf("%c",str[index]);
 return 0;
 }
+
+12.
