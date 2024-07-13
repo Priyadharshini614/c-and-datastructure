@@ -1,0 +1,181 @@
+1.print string:
+#include <stdio.h>
+int main()
+{
+    char str[50];
+    fgets(str,sizeof(str),stdin);
+    printf("%s",str);
+    return 0;
+}
+
+
+2.length of the string wthout function:
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+   char str[100];
+   fgets(str,sizeof(str),stdin);
+   puts(str);
+   int index;
+   while(str[index]!=0)
+   {
+      index++;
+   }
+  // printf("%d",index);count also space
+   printf("%d",index-1);
+return 0;
+}
+
+3.alphabet,digit,special:
+#include <stdio.h>
+
+int main()
+{
+   char str[50];
+   fgets(str,sizeof(str),stdin);
+   puts(str);
+   int index,alphabet=0,digit=0,special=0;
+   while(str[index]!='\0')
+   {
+       if((str[index]>='a'&&str[index]<='z')||(str[index]>='A'&&str[index]<='Z'))
+       alphabet++;
+   else if(str[index]>='0'&&str[index]<='9')
+   digit++;
+   else
+   special++;
+    index++;
+  
+   }
+   printf("%d %d %d",alphabet,digit,special-1);
+    return 0;
+}
+
+
+4.vowels and consonant:
+#include <stdio.h>
+
+int main()
+{
+   char str[50];
+   fgets(str,sizeof(str),stdin);
+   int index,vowel=0,consonant=0;
+   while(str[index]!='\0')
+   {
+       if(str[index]=='a'||str[index]=='e'||str[index]=='i'||str[index]=='o'||str[index]=='u'||
+       str[index]=='A'||str[index]=='E'||str[index]=='I'||str[index]=='O'||str[index]=='U')
+        vowel+=1;
+       else
+       consonant+=1;
+   index++;
+   }
+   printf("%d %d",vowel,consonant-2);
+  return 0;
+}
+
+
+5.string to uppercase:
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char str[50];
+   fgets(str,sizeof(str),stdin);
+   int index=0;
+   while(str[index]!='\0')
+   {
+       if(str[index]>='a'&&str[index]<='z')
+       str[index]-=32;
+ 
+   index++;
+}
+printf("%s",str);
+  return 0;
+}
+
+
+6.string to lowercase:
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char str[50];
+   fgets(str,sizeof(str),stdin);
+   int index=0;
+   while(str[index]!='\0')
+   {
+       if(str[index]>='A'&&str[index]<='Z')
+       str[index]+=32;
+ 
+   index++;
+}
+printf("%s",str);
+  return 0;
+}
+
+
+7.string to togglecase:
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char str[50];
+   fgets(str,sizeof(str),stdin);
+   int index=0;
+   while(str[index]!='\0')
+   {
+       if(str[index]>='A'&&str[index]<='Z')
+       str[index]+=32;
+ 
+   index++;
+}
+printf("%s",str);
+  return 0;
+}
+
+
+8.count the words in sentence:
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+   char str[100];
+   fgets(str,sizeof(str),stdin);
+   int index,count=0;
+   while(str[index]!=0)
+   {
+       if(str[index]==' '||str[index]=='\n'||str[index]=='\t')
+       count++;
+      index++;
+   }
+    printf("%d",count);
+return 0;
+}
+
+9.print string in character:
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+   char str[100];
+   fgets(str,sizeof(str),stdin);
+   int index,count=0;
+ for(index=0;str[index]!='\0';index++)
+    printf("\n%c",str[index]);
+return 0;
+}
+
+10.convert string to character in reverse order:
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+   char str[100];
+   fgets(str,sizeof(str),stdin);
+   int index,count=0;
+ for(index=0;str[index]!='\0';index++)
+    count+=1;
+for(index=count;index>=0;index--)
+    printf("\n%c",str[index]);
+return 0;
+}
