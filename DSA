@@ -1,0 +1,237 @@
+1.linked list insertion:
+#include <stdio.h>
+#include<malloc.h>
+int main()
+{
+   
+typedef struct node
+{
+    int data;
+    struct node*next;
+}NODE;
+NODE *newnode,*tptr,*shadow,*start=NULL;
+void insert(int num){
+newnode=(NODE*)malloc(sizeof(NODE));
+newnode->data=num;
+newnode->next=NULL;
+for(tptr=start;tptr;shadow=tptr,tptr=tptr->next);
+
+    if(tptr==start)
+    {
+    newnode->next=start;
+    start=newnode;
+   }
+else
+{
+     newnode->next=shadow->next;
+    shadow->next=newnode;
+}
+}
+void display()
+{
+    for(tptr=start;tptr;tptr=tptr->next)
+    printf("%d->",tptr->data);
+}
+     insert(10);
+    insert(5);
+    display();
+    return 0;
+}
+
+2.linked list deletion:
+
+#include <stdio.h>
+#include<malloc.h>
+int main(){
+typedef struct node
+{
+    int data;
+    struct node*next;
+}NODE;
+NODE *newnode,*tptr,*shadow,*start=NULL;
+void insert(int num){
+newnode=(NODE*)malloc(sizeof(NODE));
+newnode->data=num;
+newnode->next=NULL;
+for(tptr=start;tptr;shadow=tptr,tptr=tptr->next);
+
+    if(tptr==start)
+    {
+    newnode->next=start;
+    start=newnode;
+   }
+else
+{
+     newnode->next=shadow->next;
+    shadow->next=newnode;
+
+}
+}
+void delete(int num)
+{
+    for(tptr=start;tptr&&tptr->data!=num;shadow=tptr,tptr=tptr->next);
+    if(tptr==NULL)
+    printf("Nothing to delete");
+    else if(tptr==start){
+    start=start->next;
+    free(tptr);}
+    else{
+    shadow->next=tptr->next;
+    free(tptr);
+    
+    }
+}
+void display()
+{   
+    //printf("%d",start->data);
+    for(tptr=start;tptr;tptr=tptr->next)
+    printf("%d->",tptr->data);
+}
+    insert(10);
+    insert(5);
+    insert(13);
+    insert(20);
+    delete(10);
+    display();
+    return 0;
+}
+
+3.linked list search:
+#include<stdio.h>
+#include<malloc.h>
+typedef struct node
+{
+    int data;
+    struct node*next;
+}NODE;
+NODE *newnode,*tptr,*shadow,*start=NULL;
+void insert(int num)
+{
+    newnode=(NODE*)malloc(sizeof(NODE));
+    newnode->data=num;
+    newnode->next=NULL;
+    for(tptr=start;tptr;shadow=tptr,tptr=tptr->next);
+    if(start==tptr)
+    {
+        newnode->next=start;
+        start=newnode;
+    }
+    else
+    {
+        newnode->next=shadow->next;
+        shadow->next=newnode;
+    }
+    }
+void search(int num)
+{
+    for(tptr=start;tptr->data!=num;tptr=tptr->next);
+    if(tptr->data==num)
+    printf("fount");
+    else
+    printf("notfound");
+    
+}
+void display()
+{
+    for(tptr=start;tptr;tptr=tptr->next)
+    printf("%d->",tptr->data);
+ }
+int main()
+{
+    insert(10);
+    insert(5);
+    search(10);
+    display();
+}
+
+
+
+4.stack insertion:
+#include <stdio.h>
+#include <malloc.h>
+struct node
+    {
+        int data;
+        struct node*next;
+    }STACK;
+
+typedef struct node*Stack;
+Stack newnode,top,tptr;
+void push(int num)
+{
+    newnode = (Stack)malloc(sizeof(STACK));
+    newnode->data = num;
+    newnode->next = NULL;
+if(top==NULL)
+top=newnode;
+else
+newnode->next=top;
+top=newnode;
+}
+void display()
+{
+
+    for(tptr=top;tptr;tptr=tptr->next)
+    printf("%d->",tptr->data);
+}
+int main()
+{
+    push(6);
+    push(7);
+    push(8);
+   display();
+}
+
+4.stack deletion:
+#include <stdio.h>
+#include <malloc.h>
+struct node
+    {
+        int data;
+        struct node*next;
+    }STACK;
+
+typedef struct node*Stack;
+Stack newnode,top,tptr;
+void push(int num)
+{
+    newnode = (Stack)malloc(sizeof(STACK));
+    newnode->data = num;
+    newnode->next = NULL;
+if(top==NULL)
+top=newnode;
+else
+newnode->next=top;
+top=newnode;
+printf("%d ",top->data);
+
+}
+int temp;
+int pop()
+{
+
+    if (top==NULL)
+           return -1;
+    else
+        {
+        tptr=top;
+       temp=top->data;
+        top=top->next;
+        free(tptr);
+        return temp;
+        }
+}
+void display()
+{
+    printf("\n");
+    for(tptr=top;tptr;tptr=tptr->next)
+    printf("%d ",tptr->data);
+}
+int main()
+{
+    push(6);
+    push(5);
+    push(20);
+    pop();
+   display();
+}
